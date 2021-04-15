@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Bài 2</p>
+    <input type="number" id="inputOfTask2">
+    <button onclick="task2()">Sum</button>
+    <pre id="outputOfTask2"></pre>
+
+    <p>Bài 3</p>
+    <input type="number" id="input1OfTask3">
+    <input type="number" id="input2OfTask3">
+    <button onclick="task3()">Compare</button>
+    <pre id="outputOfTask3"></pre>
+
+    <p>Bài 5</p>
+    <pre id="outputOfTask5"></pre>
+    <script>
+        //Bài 1
+        // alertMessage()
+        // function alertMessage() {
+        //     alert('Xin chào')
+        // }
+        //Bài 2
+        function task2() {
+            let n = getNumber()
+            let sum = sumOfNAnd1(n)
+            document.getElementById("outputOfTask2").innerHTML = sum
+        }
+        function getNumber() {
+            return getValue("inputOfTask2")
+        }
+        function getValue(id) {
+            return document.getElementById(id).value
+        }
+        function sumOfNAnd1(val) {
+            return Number(val) + 1
+        }
+
+        //Bài 3
+        function task3() {
+            let n1 = getNumber1()
+            let n2 = getNumber2()
+            let compare = compareN1AndN2(n1, n2)
+        }
+        function compareN1AndN2(val1, val2) {
+            if (val1 > val2) {
+                document.getElementById("outputOfTask3").innerHTML = `${val1} > ${val2}`
+            }
+            if (val1 < val2) {
+                document.getElementById("outputOfTask3").innerHTML = Number(val1) + Number(val2)
+            }
+        }
+        function getNumber1() {
+            return getValue("input1OfTask3")
+        }
+        function getNumber2() {
+            return getValue("input2OfTask3")
+        }
+        function getValue(id) {
+            return document.getElementById(id).value
+        }
+
+        //Bài 4
+        // task4()
+        // function task4() {
+        //     function addNumbers() {
+        //         let firstNum = 4
+        //         let secondNum = 8
+        //         let result = firstNum + secondNum
+        //         return result
+        //     }
+        //     let result = 0
+        //     alert(result)
+        //     result = addNumbers()
+        //     alert(result)
+        // }
+
+        //Bài 5
+        task5()
+        function task5() {
+            let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+            let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+            let star = prompt("Nhập tên ngôi sao:")
+            for (let i = 0; i < arr1.length; i++) {
+                if (star == arr1[i]) {
+                    document.getElementById("outputOfTask5").innerHTML = arr2[i]
+                    break
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
